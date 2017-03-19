@@ -1,8 +1,8 @@
 @extends('web::layouts.grids.12')
 
-@section('title', trans('yourpackage::seat.name'))
-@section('page_header', trans('yourpackage::seat.name'))
-@section('page_description', trans('yourpackage::seat.name'))
+@section('title', trans('yourpackage::global.browser_title'))
+@section('page_header', trans('yourpackage::global.page_title'))
+@section('page_description', trans('yourpackage::global.page_subtitle'))
 
 @section('full')
 
@@ -14,7 +14,7 @@
 @push('javascript')
 <script>
 
-  console.log('Include anay JavaScript you may need here!');
+  console.log('Include any JavaScript you may need here!');
 
 </script>
 @endpush

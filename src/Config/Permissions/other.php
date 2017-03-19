@@ -3,7 +3,7 @@
 /*
  * This file is part of SeAT
  *
- * Copyright (C) 2015 to 2020  Leon Jacobs
+ * Copyright (C) 2015 to 2020 Leon Jacobs
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,12 +21,10 @@
  */
 
 return [
-
-    'languages' => [
-        [
-            'short' => 'en',
-            'full'  => 'English',
-        ],
-    ],
-
+    // Describing generic permissions is done here.
+    // Refer to the web package for a structure reference.
+    'other_permission_name' => [
+        'label' => 'yourpackage::permissions.other_permission_name_label',
+        'description' => 'yourpackage::permissions.other_permission_name_description',
+    ]
 ];
