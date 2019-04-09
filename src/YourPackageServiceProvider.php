@@ -2,7 +2,7 @@
 /*
 This file is part of SeAT
 
-Copyright (C) 2015, 2017  Leon Jacobs
+Copyright (C) 2015, 2017, 2018, 2019  Leon Jacobs
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -22,13 +22,13 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 namespace Author\Seat\YourPackage;
 
 use Illuminate\Routing\Router;
-use Illuminate\Support\ServiceProvider;
+use Seat\Services\AbstractSeatPlugin;
 
 /**
  * Class EveapiServiceProvider
  * @package Author\Seat\YourPackage
  */
-class YourPackageServiceProvider extends ServiceProvider
+class YourPackageServiceProvider extends AbstractSeatPlugin
 {
 
     /**
@@ -42,8 +42,8 @@ class YourPackageServiceProvider extends ServiceProvider
         // Include the Routes
         $this->add_routes();
 
-        // Publish the JS & CSS, and Database migrations
-        $this->add_publications();
+        // Inform Laravel how to load migrations
+        $this->add_migrations();
 
         // Add the views for the 'web' namespace
         $this->add_views();
@@ -64,15 +64,14 @@ class YourPackageServiceProvider extends ServiceProvider
     }
 
     /**
-     * Set the paths for migrations and assets that
-     * should be published to the main application
+     * Set the path for migrations which should
+     * be migrated by laravel. More informations:
+     * https://laravel.com/docs/5.5/packages#migrations.
      */
-    public function add_publications()
+    private function add_migrations()
     {
 
-        $this->publishes([
-            __DIR__ . '/database/migrations/' => database_path('migrations'),
-        ]);
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
     }
 
     /**
@@ -116,4 +115,61 @@ class YourPackageServiceProvider extends ServiceProvider
 
     }
 
+    /**
+     * Return the plugin public name as it should be displayed into settings.
+     *
+     * @example SeAT Web
+     *
+     * @return string
+     */
+    public function getName(): string
+    {
+        // TODO: Implement getName() method.
+    }
+
+    /**
+     * Return the plugin repository address.
+     *
+     * @example https://github.com/eveseat/web
+     *
+     * @return string
+     */
+    public function getPackageRepositoryUrl(): string
+    {
+        // TODO: Implement getPackageRepositoryUrl() method.
+    }
+
+    /**
+     * Return the plugin technical name as published on package manager.
+     *
+     * @example web
+     *
+     * @return string
+     */
+    public function getPackagistPackageName(): string
+    {
+        // TODO: Implement getPackagistPackageName() method.
+    }
+
+    /**
+     * Return the plugin vendor tag as published on package manager.
+     *
+     * @example eveseat
+     *
+     * @return string
+     */
+    public function getPackagistVendorName(): string
+    {
+        // TODO: Implement getPackagistVendorName() method.
+    }
+
+    /**
+     * Return the plugin installed version.
+     *
+     * @return string
+     */
+    public function getVersion(): string
+    {
+        // TODO: Implement getVersion() method.
+    }
 }
