@@ -54,45 +54,6 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
     }
 
     /**
-     * Include the routes
-     */
-    public function add_routes()
-    {
-
-        if (!$this->app->routesAreCached())
-            include __DIR__ . '/Http/routes.php';
-    }
-
-    /**
-     * Set the path for migrations which should
-     * be migrated by laravel. More informations:
-     * https://laravel.com/docs/5.5/packages#migrations.
-     */
-    private function add_migrations()
-    {
-
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
-    }
-
-    /**
-     * Set the path and namespace for the vies
-     */
-    public function add_views()
-    {
-
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'yourpackage');
-    }
-
-    /**
-     * Include the translations and set the namespace
-     */
-    public function add_translations()
-    {
-
-        $this->loadTranslationsFrom(__DIR__ . '/lang', 'yourpackage');
-    }
-
-    /**
      * Register the application services.
      *
      * @return void
@@ -171,5 +132,44 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
     public function getVersion(): string
     {
         // TODO: Implement getVersion() method.
+    }
+
+    /**
+     * Include the routes
+     */
+    private function add_routes()
+    {
+
+        if (! $this->app->routesAreCached())
+            include __DIR__ . '/Http/routes.php';
+    }
+
+    /**
+     * Set the path for migrations which should
+     * be migrated by laravel. More informations:
+     * https://laravel.com/docs/5.5/packages#migrations.
+     */
+    private function add_migrations()
+    {
+
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations/');
+    }
+
+    /**
+     * Set the path and namespace for the vies
+     */
+    private function add_views()
+    {
+
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'yourpackage');
+    }
+
+    /**
+     * Include the translations and set the namespace
+     */
+    private function add_translations()
+    {
+
+        $this->loadTranslationsFrom(__DIR__ . '/lang', 'yourpackage');
     }
 }
