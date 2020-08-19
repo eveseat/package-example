@@ -3,7 +3,7 @@
 /*
  * This file is part of SeAT
  *
- * Copyright (C) 2015 to 2020  Leon Jacobs
+ * Copyright (C) 2015 to 2020 Leon Jacobs
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,12 +21,12 @@
  */
 
 return [
+    'character_permission_name_label' => 'Your Plugin Character Permission',
+    'character_permission_name_description' => 'This is an end user help-block',
 
-    'languages' => [
-        [
-            'short' => 'en',
-            'full'  => 'English',
-        ],
-    ],
+    'corporation_permission_name_label' => 'Your Plugin Corporation Permission',
+    'corporation_permission_name_description' => 'This is an end user help-block',
 
+    'other_permission_name_label' => 'Your Plugin Other Permission',
+    'other_permission_name_description' => 'This is an end user help-block',
 ];

@@ -2,7 +2,7 @@
 /*
 This file is part of SeAT
 
-Copyright (C) 2015, 2017  Leon Jacobs
+Copyright (C) 2015 to 2020  Leon Jacobs
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,12 +24,12 @@ namespace Author\Seat\YourPackage\Http\Controllers;
 use Seat\Web\Http\Controllers\Controller;
 
 /**
- * Class HomeController
+ * Class HomeController.
+ *
  * @package Author\Seat\YourPackage\Http\Controllers
  */
 class HomeController extends Controller
 {
-
     /**
      * @return \Illuminate\View\View
      */
@@ -38,5 +38,4 @@ class HomeController extends Controller
 
         return view('yourpackage::myview');
     }
-
 }
