@@ -1,4 +1,4 @@
-@extends('web::layouts.grids.12')
+@extends('web::layouts.app')
 
 @section('title', trans('yourpackage::global.browser_title'))
 @section('page_header', trans('yourpackage::global.page_title'))

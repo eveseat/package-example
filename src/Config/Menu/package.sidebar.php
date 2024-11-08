@@ -34,7 +34,7 @@ return [
                 'name' => 'menu-sub-entry-name',
                 'label' => 'yourpackage::menu.sub_level',
                 'icon' => 'fas fa-th-list',
-                'route' => 'your-package.home',
+                'route' => 'your-package::home',
             ],
         ],
     ],

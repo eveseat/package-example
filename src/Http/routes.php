@@ -27,7 +27,7 @@ Route::group([
 
     // Your route definitions go here.
     Route::get('/your-package/home', [
-        'as'   => 'your-package.home',
+        'as'   => 'your-package::home',
         'uses' => 'HomeController@getHome'
     ]);
 
