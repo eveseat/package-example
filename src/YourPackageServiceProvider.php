@@ -51,9 +51,6 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/Config/yourpackage.config.php', 'yourpackage.config');
-        $this->mergeConfigFrom(__DIR__ . '/Config/yourpackage.locale.php', 'yourpackage.locale');
-
         // Overload sidebar with your package menu entries
         $this->mergeConfigFrom(__DIR__ . '/Config/Menu/package.sidebar.php', 'package.sidebar');
 
@@ -184,15 +181,5 @@ class YourPackageServiceProvider extends AbstractSeatPlugin
     public function getPackagistVendorName(): string
     {
         return 'author';
-    }
-
-    /**
-     * Return the plugin installed version.
-     *
-     * @return string
-     */
-    public function getVersion(): string
-    {
-        return config('yourpackage.config.version');
     }
 }
